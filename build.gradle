@@ -1,0 +1,61 @@
+allprojects{
+    task hello << { task -> println "I'm $task.project.name" }
+}
+
+subprojects{
+    apply plugin: 'java'
+    apply plugin: 'application'
+    group = 'luad'
+    version = '0.0.1-SNAPSHOT'
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+    repositories {
+        maven { url "https://repo.maven.apache.org/maven2" }
+    }
+    dependencies {
+        testCompile group: 'junit', name: 'junit', version:'3.8.1'
+    }
+    tasks.withType(Jar) {
+        destinationDir = file("$rootDir/build/libs")
+    }
+    clean.doLast{
+        file("$rootDir/build/libs").deleteDir()
+    }
+}
+
+// how to build: gradle eggz:gui:build
+project('eggz:gui'){
+    applicationName = 'eggsGui'
+    mainClassName = 'luad.eggs.gui.App'
+    jar {
+        manifest {
+            attributes 'Main-Class': 'luad.eggs.gui.App'
+        }
+    }
+}
+
+project('eggz:server'){
+    dependencies {
+        compile project(':eggz:gui')
+    }
+    applicationName = 'eggsServer'
+    mainClassName = 'luad.eggs.network.server.EggsServer'
+    jar {
+        manifest {
+            attributes 'Main-Class': 'luad.eggs.network.server.EggsServer'
+        }
+    }
+}
+
+project('eggz:client'){
+    dependencies {
+        compile project(':eggz:gui')
+    }
+    applicationName = 'eggsClient'
+    mainClassName = 'luad.eggs.network.client.EggsClient'
+    jar {
+        manifest {
+            attributes 'Main-Class': 'luad.eggs.network.client.EggsClient'
+        }
+    }
+}

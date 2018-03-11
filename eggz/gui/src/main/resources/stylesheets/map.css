@@ -1,0 +1,28 @@
+#tile-land {
+	-fx-background-image: url("../images/mapTiles/land_100px.png")
+}
+
+#tile-sea {
+	-fx-background-image: url("../images/mapTiles/sea_100px.png")
+}
+
+#player {
+	-fx-background-image: url("../images/man_33px.png");
+	-fx-background-position: center;
+	-fx-background-repeat: no-repeat;
+	-fx-translate-y: -18;
+}
+
+#egg {
+	-fx-background-image: url("../images/egg_33px.png");
+	-fx-background-position: center;
+	-fx-background-repeat: no-repeat;
+	-fx-translate-y: -18;
+}
+
+#map-holder {
+	-fx-fill-width: false;
+	-fx-fill-height: false;
+	-fx-alignment: center;
+	-fx-background-color: black;
+}

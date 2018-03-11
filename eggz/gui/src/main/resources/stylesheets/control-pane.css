@@ -1,0 +1,36 @@
+.control-button {
+	-fx-effect: dropshadow(gaussian, gray, 1, 1.0, 1, 2);
+}
+
+.control-button:pressed {
+	-fx-translate-x: 1;
+	-fx-translate-y: 1;
+	-fx-effect: none;
+}
+.control-button-north {
+	-fx-background-image: url("../images/buttons/north_100px.png");
+}
+
+.control-button-south {
+	-fx-background-image: url("../images/buttons/south_100px.png");
+}
+
+.control-button-east {
+	-fx-background-image: url("../images/buttons/east_100px.png");
+}
+
+.control-button-west {
+	-fx-background-image: url("../images/buttons/west_100px.png");
+}
+
+.control-button-centre {
+	-fx-background-image: url("../images/buttons/pick_up_100px.png")
+}
+
+.control-pane {
+	-fx-alignment: center;
+}
+
+.controls-area {
+	-grid-transform: 69 69 42 -42;
+}

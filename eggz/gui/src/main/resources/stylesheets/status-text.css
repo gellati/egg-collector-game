@@ -1,0 +1,11 @@
+.status-text-holder {
+	-fx-padding: 2pt;
+	-fx-min-height: 14pt;
+	-fx-border-color: gray;
+	-fx-border-width: 1px;
+}
+
+.status-text {
+	-fx-font-size: 10pt;
+	-fx-font-weight: bold;
+}

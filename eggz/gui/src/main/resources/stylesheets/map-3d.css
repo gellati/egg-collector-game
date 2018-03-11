@@ -1,0 +1,8 @@
+.game-map-pane {
+	-cell-width: 100;
+	-cell-height: 100;
+	-grid-transform: 48 47 28 -29;
+	-fx-alignment: center;
+	-fx-fill-width: false;
+	-fx-fill-height: false;
+}

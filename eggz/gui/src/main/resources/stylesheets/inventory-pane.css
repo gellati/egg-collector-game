@@ -1,0 +1,70 @@
+.title-box {
+	-fx-alignment: center-left;
+	-fx-spacing: 5px;
+	-fx-padding: 5px 20px 5px 5px;
+	-fx-border-color: black;
+	-fx-border-weight: 2pt;
+	-fx-min-width: 250px;
+}
+
+.inventory-title {
+	-fx-font-family: sans-serif;
+	-fx-font-size: 24;
+	-fx-font-weight: bold;
+}
+
+.inventory-icon {
+	-fx-min-height: 50px;
+	-fx-min-width: 50px;
+}
+
+.inventory-pane {
+}
+
+.animals-scroll-pane {
+	-fx-border-weight: 0;
+	-fx-vbar-policy: as-needed;
+	-fx-hbar-policy: never;
+}
+
+.eggs-scroll-pane {
+	-fx-max-width: 250px;
+	-fx-border-weight: 0;
+	-fx-min-height: 64px;
+	-fx-hbar-policy: always;
+	-fx-vbar-policy: never;
+}
+
+.bag-icon {
+	-fx-background-image: url("../images/bag.png")
+}
+
+.egg-icon {
+    -fx-background-image: url("../images/egg.png")	
+}
+
+/* Animals */
+
+.chicken-icon {
+	-fx-background-image: url("../images/animals/chicken.png");
+}
+
+.duck-icon {
+	-fx-background-image: url("../images/animals/duck.png")
+}
+
+.snake-icon {
+	-fx-background-image: url("../images/animals/snake.png")
+}
+
+.lizard-icon {
+	-fx-background-image: url("../images/animals/lizard.png")
+}
+
+.t-rex-icon {
+	-fx-background-image: url("../images/animals/trex.png")
+}
+
+.triceratops-icon {
+	-fx-background-image: url("../images/animals/triceratops.png")
+}
