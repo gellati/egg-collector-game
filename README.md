@@ -9,14 +9,14 @@ The player can be moved around with arrow keys. Eggs are picked up by pressing t
 
 ###  Project structure
 
-The source code is in the `eggz` folder and is divided into three modules: gui, server and client. `gui` contains the source code to run the game locally.
+The source code is in the `eggz` folder and is divided into three modules: gui, server and client. `gui` contains the source code to run the game locally. For server and client to work, the server has to be started first, then the client can be stared.
 
 ### Building the projects
 
 Build the gui
 
     gradle eggz:gui:build
-    
+
 Build the server
 
     gradle eggz:server:build
@@ -28,7 +28,8 @@ Build the client
 Runnable jar are produced into `build/libs`. These can be run with
 
     java -jar <name of jar>
-    
+
+Gui can be run as a standalone application, while server needs to be started before client.
 
 ### GUI development notes
 Project dependent on jfx, see [here](https://github.com/dice-group/LIMES/issues/56)
@@ -36,7 +37,7 @@ Project dependent on jfx, see [here](https://github.com/dice-group/LIMES/issues/
 in Fedora install jfx  and its java dependencies with
 
     sudo dnf install openjfx java-1.8.0-openjdk-openjfx
-    
+
 Manifest attribute  for the jar file from [here](https://stackoverflow.com/questions/9689793/cant-execute-jar-file-no-main-manifest-attribute)
 
 Get detailed output from graphics pipeline:
@@ -49,6 +50,7 @@ Understanding where the resources are [read](http://www.mytechnotes.biz/2012/08/
 
 Modularizing the project: [this](https://docs.gradle.org/current/userguide/multi_project_builds.html) and [this](https://rominirani.com/gradle-tutorial-part-3-multiple-java-projects-5b1c4d1fbd8d)
 
+[Including depencencies in end jar file](https://stackoverflow.com/questions/42458292/java-lang-noclassdeffounderror-when-trying-to-run-jar)
 
 ### Todo
 - server configuration

@@ -24,7 +24,7 @@ public class EggsServer
    * Port number to connect to.
    */
   private static final int PORT_NUMBER = 9009;
-  
+
   /**
    * Server socket to broadcast on.
    */
@@ -38,25 +38,28 @@ public class EggsServer
   {
     try {
       serverSocket = new ServerSocket(PORT_NUMBER);
-      Socket clientSocket = serverSocket.accept();
+      Socket clientSocket;
 
-      // Set up the game.
-      GameMap map = new TextMap();
-      System.out.println("main4");
-//      map.readMap("src/main/resources/maps/bigMap.txt");
-      map.readMap("/maps/bigMap.txt");
-      Player player = new HumanPlayer();
-      player.setPosition(new Point2D(2, 3));
-      System.out.println("main5");
-      OutputViewer viewer = new ServerHead(clientSocket);
-      GameModel gameModel = new StandardGameModel(viewer, map, player);
-      System.out.println("main6");
+      while((clientSocket = serverSocket.accept()) != null){
+        // Set up the game.
+        GameMap map = new TextMap();
+        System.out.println("main4");
+  //      map.readMap("src/main/resources/maps/bigMap.txt");
+        map.readMap("/maps/bigMap.txt");
+        Player player = new HumanPlayer();
+        player.setPosition(new Point2D(2, 3));
+        System.out.println("main5");
+        OutputViewer viewer = new ServerHead(clientSocket);
+        GameModel gameModel = new StandardGameModel(viewer, map, player);
+        System.out.println("main6");
 
-      // Set up the output back to the socket.
-      StreamInputController controller;
-      controller = new StreamInputController(clientSocket.getInputStream());
-      controller.addObserver(gameModel);
-      new Thread(controller).start();
+        // Set up the output back to the socket.
+        StreamInputController controller;
+        controller = new StreamInputController(clientSocket.getInputStream());
+        controller.addObserver(gameModel);
+        new Thread(controller).start();
+      }
+
     } catch (IOException exception) {
       exception.printStackTrace();
     }

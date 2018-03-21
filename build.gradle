@@ -16,12 +16,14 @@ subprojects{
         testCompile group: 'junit', name: 'junit', version:'3.8.1'
     }
     tasks.withType(Jar) {
+        from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }    
         destinationDir = file("$rootDir/build/libs")
     }
     clean.doLast{
         file("$rootDir/build/libs").deleteDir()
     }
 }
+
 
 // how to build: gradle eggz:gui:build
 project('eggz:gui'){
